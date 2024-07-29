@@ -5,5 +5,6 @@ export const validateSchema = Yup.object({
   email: Yup.string().email().required("Please enter your email"),
   password: Yup.string().min(6).required("Please enter your password"),
   confirm_password: Yup.string().required().oneOf([Yup.ref("password"), null], "Password must match"),
-  picked: Yup.string().required('it is required'),
+  picked: Yup.string().required("Gender is required"),
+  check: Yup.string().required("City is required"),
 });

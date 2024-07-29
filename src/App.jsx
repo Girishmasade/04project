@@ -3,8 +3,7 @@ import MyForm from './Form/Form'
 
 function App() {
   return (
-    <div>
-      <MyForm/>
+    <div><MyForm/>
     </div>
   )
 }

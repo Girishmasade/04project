@@ -2,11 +2,15 @@ import React from 'react'
 import { useFormik } from "formik";
 import { validateSchema } from './Validation';
 
+
 const  initialValues = {
   name: "",
   email: "",
   password: "",
   confirm_password: "",
+  picked: '',
+  check: '',
+  
 }
 
 const MyForm = () => {
@@ -25,7 +29,7 @@ const MyForm = () => {
     
    
   return (
-    <div>
+    <div className=''>
       <form onSubmit={handleSubmit}>
         <div className="w-100 my-2 mx-2">
             <div className="container my-4">
@@ -82,13 +86,120 @@ const MyForm = () => {
             />
               {errors.confirm_password && touched.confirm_password ? (<p>{errors.confirm_password}</p>) : null}
             </div>
-            <div className='my-4'>
-            
+            <div className='my-2'>
+              <p>Specify your gender</p>
+              <div role="group" aria-labelledby="my-radio-group">
+                <div className="container">
+                <label htmlFor='picked'>
+                  <input
+                  type='radio'
+                  name='picked'
+                  id='picked'
+                  value='male'
+                  onChange={handleChange}
+                  />
+                  Male
+                </label>
+                </div>
+                <div className="container">
+                <label htmlFor='picked'>
+                  <input
+                  type='radio'
+                  name='picked'
+                  id='picked'
+                  value='female'
+                  onChange={handleChange}
+                  />
+                  Female
+                </label>
+                </div>
+                <div className="container">
+                <label htmlFor='picked'>
+                  <input
+                  type='radio'
+                  name='picked'
+                  id='picked'
+                  value='other'
+                  onChange={handleChange}
+                  />
+                  Other
+                </label>
+                </div>
+                {errors.picked && touched.picked ? <p>{errors.picked}</p> : null} 
+              </div>
+            </div>
+
+            <div className="checkbox my-2">
+              <p>Choose your center for Exam</p>
+              <div className='container'>
+                <div>
+                <label htmlFor='check'>
+                  <input
+                  type='checkbox'
+                  name='check'
+                  id='check'
+                  value='Nagpur'
+                  onChange={handleChange}
+                  />
+                  Nagpur
+                </label>
+                </div>
+               
+                <div>
+                <label htmlFor='check'>
+                  <input
+                  type='checkbox'
+                  name='check'
+                  id='check'
+                  value='Amravati'
+                  onChange={handleChange}
+                  />
+                  Amravati
+                </label>
+                </div>
+
+                <div>
+                <label htmlFor='check'>
+                  <input
+                  type='checkbox'
+                  name='check'
+                  id='check'
+                  value='Chandrapur'
+                  onChange={handleChange}
+                  />
+                  Chandrapur
+                </label>
+                </div>
+
+                <div>
+                <label htmlFor='check'>
+                  <input
+                  type='checkbox'
+                  name='check'
+                  id='check'
+                  value='Pune'
+                  onChange={handleChange}
+                  />
+                  Pune
+                </label>
+                </div>
+
+                <div>
+                <label htmlFor='check'>
+                  <input
+                  type='checkbox'
+                  name='check'
+                  id='check'
+                  value='Delhi'
+                  onChange={handleChange}
+                  />
+                  Delhi
+                </label>
+                </div>
+                {errors.check && touched.check ? <p>{errors.check}</p> : null} 
+              </div>
             </div>
             <button type="submit" className="btn btn-light my-2">submit</button>
-        </div>
-        <div>
-
         </div>
       </form>
     </div>
