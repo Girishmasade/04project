@@ -220,7 +220,6 @@ const MyForm = () => {
                 Bio: <br /><textarea name='textarea' id='textarea' value={values.textarea} placeholder='Enter the details' style={{width: '300px', height: "100px"}}/>
               </label>
               {errors.textarea && touched.textarea ? <p style={{color: 'red'}}>{errors.textarea}</p> : null} 
-
             </div>
 
             <button type="submit" className="btn btn-light my-4">submit</button>
