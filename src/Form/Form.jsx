@@ -10,7 +10,8 @@ const  initialValues = {
   confirm_password: "",
   picked: '',
   check: '',
-  
+  selectedOption: '',
+  textarea: '',
 }
 
 const MyForm = () => {
@@ -44,7 +45,7 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             />
-            {errors.username && touched.username ? (<p>{errors.username}</p>) : null}
+            {errors.name && touched.name ? (<p style={{color: 'red'}}>{errors.name}</p>) : null}
             </div>
             <div className="container my-4">
             <label htmlFor="email" className='px-3'>UserEmail</label>
@@ -57,7 +58,7 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             />
-              {errors.email && touched.email ? (<p>{errors.email}</p>) : null}
+              {errors.email && touched.email ? (<p style={{color: 'red'}}>{errors.email}</p>) : null}
             </div>
             <div className="container my-4">
             <label htmlFor="password" className='px-3'>password</label> 
@@ -71,7 +72,7 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             />
-              {errors.password && touched.password ? (<p>{errors.password}</p>) : null}
+              {errors.password && touched.password ? (<p style={{color: 'red'}}>{errors.password}</p>) : null}
             </div>
             <div className="container my-4">
             <label htmlFor="confirm_password" className='px-3'>confirm password</label>
@@ -84,7 +85,7 @@ const MyForm = () => {
             onChange={handleChange}
             onBlur={handleBlur}
             />
-              {errors.confirm_password && touched.confirm_password ? (<p>{errors.confirm_password}</p>) : null}
+              {errors.confirm_password && touched.confirm_password ? (<p style={{color: 'red'}}>{errors.confirm_password}</p>) : null}
             </div>
             <div className='my-2'>
               <p>Specify your gender</p>
@@ -125,7 +126,7 @@ const MyForm = () => {
                   Other
                 </label>
                 </div>
-                {errors.picked && touched.picked ? <p>{errors.picked}</p> : null} 
+                {errors.picked && touched.picked ? <p style={{color: 'red'}}>{errors.picked}</p> : null} 
               </div>
             </div>
 
@@ -196,10 +197,33 @@ const MyForm = () => {
                   Delhi
                 </label>
                 </div>
-                {errors.check && touched.check ? <p>{errors.check}</p> : null} 
+                {errors.check && touched.check ? <p style={{color: 'red'}}>{errors.check}</p> : null} 
               </div>
             </div>
-            <button type="submit" className="btn btn-light my-2">submit</button>
+
+            <div>
+              <label htmlFor="selectedOption">
+                Select Your subject
+                <select id='subject' name="selectedOption">
+                  <option value='Select your Exam'>Select subject</option>
+                  <option value='0' name="Physics">Physics</option>
+                  <option value='1' name="Chemistry">Chemistry</option>
+                  <option value='2' name="Maths">Maths</option>
+                  <option value='3' name="Bio">Bio</option>
+                </select>
+              </label>
+              {errors.selectedOption && touched.selectedOption ? <p style={{color: 'red'}}>{errors.selectedOption}</p> : null} 
+            </div>
+
+            <div className='py-4'>
+              <label htmlFor="textarea">
+                Bio: <br /><textarea name='textarea' id='textarea' value={values.textarea} placeholder='Enter the details' style={{width: '300px', height: "100px"}}/>
+              </label>
+              {errors.textarea && touched.textarea ? <p style={{color: 'red'}}>{errors.textarea}</p> : null} 
+
+            </div>
+
+            <button type="submit" className="btn btn-light my-4">submit</button>
         </div>
       </form>
     </div>
