@@ -6,7 +6,7 @@ const Skill = () => {
     const [todos, setTodos] = useState([])
 
 const addTodo = (todo) => {
-    setTodos((prev) => [{id:date.now(), ...todo}, ...prev])
+    setTodos((prev) => [{id: Date.now(), ...todo}, ...prev] )
 }
 
 const updateTodo = (id,  todo) => {
