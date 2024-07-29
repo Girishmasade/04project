@@ -30,11 +30,11 @@ const TodoItem = ({todo}) => {
     <input
         type="text"
         className={`border outline-none w-full bg-transparent rounded-lg ${
-            isTodoEditable ? "border-black/10 px-2" : "border-transparent"
+            IsEditabel ? "border-black/10 px-2" : "border-transparent"
         } ${todo.completed ? "line-through" : ""}`}
         value={todoMsg}
         onChange={(e) => setTodoMsg(e.target.value)}
-        readOnly={!isTodoEditable}
+        readOnly={!IsEditabel}
     />
     {/* Edit, Save Button */}
     <button
@@ -42,13 +42,13 @@ const TodoItem = ({todo}) => {
         onClick={() => {
             if (todo.completed) return;
 
-            if (isTodoEditable) {
+            if (IsEditabel) {
                 editTodo();
             } else setIsTodoEditable((prev) => !prev);
         }}
         disabled={todo.completed}
     >
-        {isTodoEditable ? "📁" : "✏️"}
+        {IsEditabel ? "📁" : "✏️"}
     </button>
     {/* Delete Todo Button */}
     <button

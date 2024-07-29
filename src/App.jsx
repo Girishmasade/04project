@@ -6,8 +6,9 @@ import Skill from './Form/Skill'
 function App() {
   return (
     <TodoProvider>
-<div><MyForm/>
-<Skill/>
+<div>
+  <MyForm/>
+  <Skill/>
 </div>
       
     </TodoProvider>

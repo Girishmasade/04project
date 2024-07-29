@@ -30,7 +30,7 @@ const MyForm = () => {
     
    
   return (
-    <div className=''>
+    <div>
       <form onSubmit={handleSubmit}>
         <div className="w-100 my-2 mx-2">
             <div className="container my-4">
@@ -139,7 +139,7 @@ const MyForm = () => {
                   type='checkbox'
                   name='check'
                   id='check'
-                  value='Nagpur'
+                  value='nagpur'
                   onChange={handleChange}
                   />
                   Nagpur
@@ -152,7 +152,7 @@ const MyForm = () => {
                   type='checkbox'
                   name='check'
                   id='check'
-                  value='Amravati'
+                  value='amravati'
                   onChange={handleChange}
                   />
                   Amravati
@@ -165,7 +165,7 @@ const MyForm = () => {
                   type='checkbox'
                   name='check'
                   id='check'
-                  value='Chandrapur'
+                  value='chandrapur'
                   onChange={handleChange}
                   />
                   Chandrapur
@@ -178,7 +178,7 @@ const MyForm = () => {
                   type='checkbox'
                   name='check'
                   id='check'
-                  value='Pune'
+                  value='pune'
                   onChange={handleChange}
                   />
                   Pune
@@ -191,25 +191,25 @@ const MyForm = () => {
                   type='checkbox'
                   name='check'
                   id='check'
-                  value='Delhi'
+                  value='delhi'
                   onChange={handleChange}
                   />
                   Delhi
                 </label>
                 </div>
-                {errors.check && touched.check ? <p style={{color: 'red'}}>{errors.check}</p> : null} 
+                {errors.check && touched.check ? <p style={{color: 'red'}}>{errors.check}</p> : null}
               </div>
             </div>
 
             <div>
               <label htmlFor="selectedOption">
                 Select Your subject
-                <select id='subject' name="selectedOption">
+                <select name="selectedOption" onChange={handleChange}>
                   <option value='Select your Exam'>Select subject</option>
-                  <option value='0' name="Physics">Physics</option>
-                  <option value='1' name="Chemistry">Chemistry</option>
-                  <option value='2' name="Maths">Maths</option>
-                  <option value='3' name="Bio">Bio</option>
+                  <option value='Physics'>Physics</option>
+                  <option value='Chemistry'>Chemistry</option>
+                  <option value='Maths' >Maths</option>
+                  <option value='Bio'>Bio</option>
                 </select>
               </label>
               {errors.selectedOption && touched.selectedOption ? <p style={{color: 'red'}}>{errors.selectedOption}</p> : null} 
@@ -217,7 +217,7 @@ const MyForm = () => {
 
             <div className='py-4'>
               <label htmlFor="textarea">
-                Bio: <br /><textarea name='textarea' id='textarea' value={values.textarea} placeholder='Enter the details' style={{width: '300px', height: "100px"}}/>
+                Bio: <br /><textarea name='textarea' id='textarea' onChange={handleChange} placeholder='Enter the details' style={{width: '300px', height: "100px"}}/>
               </label>
               {errors.textarea && touched.textarea ? <p style={{color: 'red'}}>{errors.textarea}</p> : null} 
             </div>
